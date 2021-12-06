@@ -1,4 +1,9 @@
 .header {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: var(--height-header);
 	&__container {
 		display: flex;
 		justify-content: space-between;
