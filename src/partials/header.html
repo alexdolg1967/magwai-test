@@ -13,7 +13,7 @@
 		<nav class="nav header__nav">
 			<ul class="header__nav-list nav__list">
 				<li class="nav__item">
-					<a href="#services" class="nav__link _goto-block">Услуги</a>
+					<a href="#services" class="nav__link _active">Услуги</a>
 				</li>
 				<li class="nav__item">
 					<a href="#tickets" class="nav__link">Абонементы</a>
@@ -34,16 +34,16 @@
 					<a href="#contacts" class="nav__link">Контакты</a>
 				</li>
 			</ul>
-			<div class="header__buttons">
-				<a href="tel:+99999999999" class="btn btn-phone">
-					<svg>
-						<use xlink:href="img/sprite.svg#phone"></use>
-					</svg>
-				</a>
-				<button class="btn modal-open" data-path="form-popup">
-					<span>Оставить заявку</span>
-				</button>
-			</div>
 		</nav>
+		<div class="header__buttons" data-da="header__nav, 3, 767">
+			<a href="tel:+99999999999" class="btn btn-phone">
+				<svg>
+					<use xlink:href="img/sprite.svg#phone"></use>
+				</svg>
+			</a>
+			<button class="btn modal-open" data-path="form-popup">
+				<span>Оставить заявку</span>
+			</button>
+		</div>
 	</div>
 </header>
