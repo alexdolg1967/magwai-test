@@ -23,6 +23,16 @@ body {
 	-webkit-tap-highlight-color: transparent;
 	background-color: var(--color-bg);
 	overflow-x: hidden;
+
+	&._lock {
+		overflow: hidden;
+	}
+
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		min-height: 100vh;
+		color: #ffffff;
+		background-color: #131313;
+	}
 }
 
 aside,

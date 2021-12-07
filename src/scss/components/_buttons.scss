@@ -1,12 +1,20 @@
 .btn {
 	position: relative;
-	padding: 21px 35px;
+	width: 260px;
+	padding: 12px 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 	font-weight: 600;
+	font-size: calc(14px + 16 * ((100vw - 320px) / (1530 - 320)));
 	text-transform: uppercase;
 	background-color: transparent;
 	color: var(--color-white);
 	border: 1px solid transparent;
+	transition: 0.4s;
 	cursor: pointer;
+
 	&::before {
 		content: "";
 		position: absolute;
@@ -17,5 +25,28 @@
 		z-index: -1;
 		background-color: var(--color-accent);
 		transform: skewX(-20deg);
+
+		@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+			background-color: #c2ab81;
+		}
+	}
+	&-phone {
+		opacity: 0.4;
+		&::before {
+			border: 1px solid var(--color-white);
+			background-color: transparent;
+		}
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	@media screen and (min-width: 767px) {
+		padding: 21px 35px;
+	}
+
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		font-size: 16px;
+		color: #fff;
 	}
 }

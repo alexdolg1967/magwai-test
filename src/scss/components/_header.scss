@@ -4,6 +4,9 @@
 	align-items: center;
 	justify-content: center;
 	height: var(--height-header);
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		height: 60px;
+	}
 	&__container {
 		display: flex;
 		justify-content: space-between;
@@ -35,6 +38,9 @@
 				top: 28px;
 				width: 22px;
 			}
+			@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+				background-color: #fff;
+			}
 		}
 		&._active {
 			span {
@@ -54,19 +60,79 @@
 		flex: 0 0 100px;
 		width: 100px;
 		height: 36px;
+		z-index: 2;
+		@media screen and (min-width: 767px) {
+			flex: 0 0 130px;
+			width: 130px;
+			height: 46px;
+		}
+		@media screen and (min-width: 991px) {
+			flex: 0 0 156px;
+			width: 156px;
+			height: 60px;
+		}
+	}
+	&__nav {
+		position: absolute;
+		top: 51px;
+		left: -102vw;
+		right: 0;
+		z-index: 99;
+		width: 100%;
+		height: calc(100vh - var(--height-header));
+		padding: 32px 18px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		gap: calc(var(--big-grid-gap) * 3);
+		background-color: var(--color-black);
+		transition: 0.4s ease-in-out;
+		@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+			height: 60px;
+			gap: 30px;
+		}
+		&._active {
+			left: 0;
+			overflow-y: auto;
+		}
 	}
 	&__nav-list {
-		display: none;
-		align-items: center;
+		display: flex;
+		flex-direction: column;
+		align-self: start;
+		gap: 15px;
+	}
+	& .nav__item {
+		color: #fff;
+	}
+	& .nav__link {
+		font-weight: 600;
+		font-size: 22px;
+		line-height: 1.3;
+		letter-spacing: 1.2px;
+		text-transform: uppercase;
+		color: #131313;
+		text-shadow: -1px 0 1px var(--color-white), 0 -1px 1px var(--color-white), 1px 0 1px var(--color-white),
+			0 1px 1px var(--color-white);
+
+		@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+			color: #131313;
+		}
 	}
 	&__buttons {
 		display: flex;
+		flex-direction: column;
 		align-items: center;
+		gap: calc(var(--grid-gap) / 2);
 		.btn-phone {
 			svg {
 				width: 20px;
 				height: 20px;
 			}
+		}
+		@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+			margin-bottom: 10px;
 		}
 	}
 }

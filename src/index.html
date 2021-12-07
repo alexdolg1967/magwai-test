@@ -22,12 +22,12 @@
 </head>
 
 <body>
-	<div class="site-container">
-		@include('partials/header.html')
-		@include('partials/news.html')
 
-		@include('partials/footer.html')
-	</div>
+	@include('partials/header.html')
+	<main class="main">
+		@include('partials/news.html')
+		@include('partials/cards.html')
+	</main>
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<script src="js/vendor.js"></script>
 	<script src="js/main.js"></script>
