@@ -11,7 +11,7 @@ const swiper = new Swiper(".swiper-container", {
     // autoplay: {
     //     delay: 7000,
     // },
-    loop: true,
+    //loop: true,
     // Отступ между слайдами
     spaceBetween: 30,
     observer: true,
@@ -56,7 +56,7 @@ if (iconMenu != null) {
     let delay = 500;
     iconMenu.addEventListener("click", function (e) {
         if (unlock) {
-            body.classList.add("_lock");
+            body.classList.toggle("_lock");
             iconMenu.classList.toggle("_active");
             menuBody.classList.toggle("_active");
         }
