@@ -18,9 +18,9 @@
 	&::before {
 		content: "";
 		position: absolute;
-		top: 0;
+		top: -1px;
 		right: 0;
-		bottom: 0;
+		bottom: -1px;
 		left: 0;
 		z-index: -1;
 		background-color: var(--color-accent);
@@ -34,6 +34,8 @@
 		opacity: 0.4;
 
 		&::before {
+			top: 0;
+			bottom: 0;
 			border: 1px solid var(--color-white);
 			background-color: transparent;
 		}
