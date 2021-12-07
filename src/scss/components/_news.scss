@@ -36,8 +36,8 @@
 		&-pagination {
 			&-bullets {
 				position: absolute;
-				right: var(--grid-gap);
-				bottom: var(--grid-gap);
+				right: 20px;
+				bottom: 20px;
 				left: auto;
 				width: max-content;
 				text-align: right;
@@ -45,7 +45,24 @@
 				flex-direction: column;
 				z-index: 5;
 
+				@media screen and (orientation: portrait) and (min-height: 569px) {
+					bottom: 30px;
+				}
+
+				@media screen and (orientation: portrait) and (min-height: 737px) {
+					bottom: 40px;
+				}
+
+				@media screen and (orientation: portrait) and (min-width: 575px) {
+					right: 30px;
+					bottom: 50px;
+				}
+
 				@media (min-width: 992px) {
+					bottom: 100px;
+				}
+
+				@media (min-width: 1200px) {
 					bottom: 177px;
 				}
 
@@ -65,7 +82,7 @@
 				cursor: pointer;
 
 				&.card {
-					margin: 0px 0px var(--grid-gap) 0px;
+					margin-top: var(--grid-gap);
 				}
 
 				&:hover {
@@ -120,7 +137,7 @@
 				bottom: 0;
 				left: 0px;
 				width: 100%;
-				height: 22%;
+				height: 20%;
 				background: linear-gradient(0deg, #272727 5%, rgba(#272727, 0.6) 45%, rgba(19, 19, 19, 0) 96%);
 				background-repeat: no-repeat;
 				z-index: 2;
@@ -133,23 +150,32 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
+
+			@media screen and (orientation: landscape) and (min-width: 992px) {
+				justify-content: flex-end;
+				align-items: center;
+			}
 		}
 
 		&-content {
 			position: relative;
 			width: 100%;
-			padding: var(--big-main-offset);
-			margin-bottom: var(--grid-gap);
+			padding-bottom: var(--grid-gap);
 
-			@media screen and (orientation: landscape) and (max-width: 568px) {
-				// width: 70%;
+			@media screen and (orientation: landscape) and (max-width: 812px) {
+				padding-bottom: 12%;
 			}
 
-			@media screen and (min-width: 992px) {
+			@media screen and (orientation: landscape) and (min-width: 992px) {
+				padding-bottom: 137px;
+			}
+
+			@media screen and (orientation: landscape) and (min-width: 1100px) {
 				padding-bottom: 177px;
 				justify-content: flex-end;
 				align-items: flex-start;
 			}
+
 			@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 				padding: 20px;
 			}
@@ -189,9 +215,9 @@
 					font-size: 28px;
 				}
 
-				@media screen and (min-width: 767px) {
-					max-width: 680px;
-					font-size: 34px;
+				@media screen and (orientation: landscape) and (min-width: 735px) and (max-width: 812px) {
+					font-size: 32px;
+					margin-bottom: 10px;
 				}
 
 				@media screen and (min-width: 1024px) {

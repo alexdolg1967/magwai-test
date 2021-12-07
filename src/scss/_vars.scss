@@ -11,9 +11,10 @@
 	--grid-gap: 10px;
 	--big-grid-gap: 15px;
 	--main-offset: 10px;
-
-	@media screen and (min-width: 767px) {
+	@media screen and (orientation: portrait) and (min-width: 767px) {
 		--height-header: 116px;
+	}
+	@media screen and (min-width: 767px) {
 		--grid-gap: 15px;
 		--big-grid-gap: 25px;
 		--main-offset: 20px;
