@@ -12,7 +12,6 @@ html {
 }
 
 body {
-	margin: 0;
 	min-height: -webkit-fill-available;
 	font-family: "Montserrat", sans-serif;
 	font-size: 14px;
@@ -117,8 +116,6 @@ strong {
 
 ul,
 li {
-	margin: 0;
-	padding: 0;
 	list-style: none;
 }
 
@@ -158,7 +155,7 @@ li {
 	clip: rect(0 0 0 0);
 }
 
-/* SCROLL  */
+/* SCROLLBAR */
 html::-webkit-scrollbar {
 	width: 12px;
 }
@@ -181,18 +178,22 @@ html::-webkit-scrollbar-thumb {
 	background: var(--color-accent);
 	color: #333;
 }
+
 ::-webkit-input-placeholder {
 	/* Chrome */
 	color: rgba(#fff, 0.6);
 }
+
 :-ms-input-placeholder {
 	/* IE 10+ */
 	color: rgba(#fff, 0.6);
 }
+
 ::-moz-placeholder {
 	/* Firefox 19+ */
 	color: rgba(#fff, 0.6);
 }
+
 :-moz-placeholder {
 	/* Firefox 4 - 18 */
 	color: rgba(#fff, 0.6);

@@ -17,9 +17,9 @@
 
 	&__menu-icon {
 		position: relative;
-		height: 36px;
 		display: flex;
 		flex: 0 0 31px;
+		height: 36px;
 		cursor: pointer;
 		z-index: 5;
 
@@ -96,17 +96,17 @@
 	&__nav {
 		position: absolute;
 		top: 51px;
-		left: -102vw;
 		right: 0;
+		left: -102vw;
 		z-index: 99;
-		width: 100%;
-		height: calc(100vh - var(--height-header));
-		padding: 32px 18px;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
 		align-items: center;
 		gap: calc(var(--big-grid-gap) * 3);
+		width: 100%;
+		height: calc(100vh - var(--height-header));
+		padding: 32px 18px;
 		background-color: var(--color-black);
 		transition: 0.4s ease-in-out;
 
@@ -123,11 +123,11 @@
 			position: relative;
 			top: 0;
 			left: 0;
+			flex-direction: row;
+			justify-content: space-between;
 			width: auto;
 			height: auto;
 			padding: 0;
-			flex-direction: row;
-			justify-content: space-between;
 			background-color: transparent;
 			z-index: 1;
 		}
@@ -168,9 +168,9 @@
 		letter-spacing: 1.2px;
 		text-transform: uppercase;
 		color: var(--color-black);
-		transition: 0.4s;
 		text-shadow: -1px 0 1px var(--color-white), 0 -1px 1px var(--color-white), 1px 0 1px var(--color-white),
 			0 1px 1px var(--color-white);
+		transition: 0.4s;
 
 		@media screen and (orientation: portrait) and (min-width: 767px) {
 			font-size: 44px;
