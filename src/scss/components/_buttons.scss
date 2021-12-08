@@ -62,13 +62,19 @@
 				4px 4px 5px 0px rgba(0, 0, 0, 0.1);
 			transition: all 0.3s ease;
 		}
+
 		&:hover {
-			color: var(--color-black);
+			@media screen and (min-width: 767px) {
+				color: var(--color-black);
+			}
 		}
+
 		&:hover:after {
-			top: auto;
-			bottom: 0;
-			height: 100%;
+			@media screen and (min-width: 767px) {
+				top: auto;
+				bottom: 0;
+				height: 100%;
+			}
 		}
 	}
 
