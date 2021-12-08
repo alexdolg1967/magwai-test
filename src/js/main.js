@@ -73,3 +73,24 @@ navLink.forEach((n) =>
         iconMenu.classList.remove("_active");
     })
 );
+
+// показываем или убираем плашку внизу при скроле
+const scrollableElement = document.body; //document.getElementById('scrollableElement');
+const topPanel = document.querySelector(".header");
+
+scrollableElement.addEventListener("wheel", checkScrollDirection);
+
+function checkScrollDirection(event) {
+    if (checkScrollDirectionIsUp(event)) {
+        topPanel.classList.add("_active");
+    } else {
+        topPanel.classList.remove("_active");
+    }
+}
+
+function checkScrollDirectionIsUp(event) {
+    if (event.wheelDelta) {
+        return event.wheelDelta > 0;
+    }
+    return event.deltaY < 0;
+}

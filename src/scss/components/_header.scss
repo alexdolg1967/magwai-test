@@ -1,13 +1,11 @@
 .header {
 	position: relative;
+	top: -100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	height: var(--height-header);
-
-	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-		height: 60px;
-	}
+	transition: 0.4s;
 
 	&__container {
 		display: flex;
@@ -242,5 +240,18 @@
 		@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 			margin-bottom: 10px;
 		}
+	}
+
+	&._active {
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 100%;
+		background-color: var(--color-bg);
+		z-index: 99;
+	}
+
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		height: 60px;
 	}
 }
