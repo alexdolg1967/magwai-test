@@ -27,7 +27,7 @@ const swiper = new Swiper(".swiper-container", {
         renderBullet: function (index, className) {
             return (
                 '\
-		  <div class="card ' +
+		  <div class="news ' +
                 className +
                 '">\
 		  <div class="text">' +
