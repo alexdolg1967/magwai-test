@@ -53,7 +53,6 @@ let menuBody = document.querySelector(".nav");
 let body = document.querySelector("body");
 
 if (iconMenu != null) {
-    let delay = 500;
     iconMenu.addEventListener("click", function (e) {
         if (unlock) {
             body.classList.toggle("_lock");
@@ -74,7 +73,7 @@ navLink.forEach((n) =>
     })
 );
 
-// показываем или убираем плашку внизу при скроле
+// показываем или убираем плашку вверху при скроле
 const scrollableElement = document.body; //document.getElementById('scrollableElement');
 const topPanel = document.querySelector(".header");
 
@@ -93,4 +92,85 @@ function checkScrollDirectionIsUp(event) {
         return event.wheelDelta > 0;
     }
     return event.deltaY < 0;
+}
+
+//  тоже самое для планшетов и мобилок
+//Чувствительность — количество пикселей, после которого жест будет считаться свайпом
+const sensitivity = 20;
+
+var touchStart = null; //Точка начала касания
+var touchPosition = null; //Текущая позиция
+
+//Перехватываем события
+scrollableElement.addEventListener("touchstart", function (e) {
+    TouchStart(e);
+}); //Начало касания
+scrollableElement.addEventListener("touchmove", function (e) {
+    TouchMove(e);
+}); //Движение пальцем по экрану
+//Пользователь отпустил экран
+scrollableElement.addEventListener("touchend", function (e) {
+    TouchEnd(e, "green");
+});
+//Отмена касания
+scrollableElement.addEventListener("touchcancel", function (e) {
+    TouchEnd(e, "red");
+});
+
+function TouchStart(e) {
+    //Получаем текущую позицию касания
+    touchStart = {
+        x: e.changedTouches[0].clientX,
+        y: e.changedTouches[0].clientY,
+    };
+    touchPosition = { x: touchStart.x, y: touchStart.y };
+}
+
+function TouchMove(e) {
+    //Получаем новую позицию
+    touchPosition = {
+        x: e.changedTouches[0].clientX,
+        y: e.changedTouches[0].clientY,
+    };
+}
+
+function TouchEnd(e, color) {
+    CheckAction(); //Определяем, какой жест совершил пользователь
+
+    //Очищаем позиции
+    touchStart = null;
+    touchPosition = null;
+}
+
+function CheckAction() {
+    var d = {
+        //Получаем расстояния от начальной до конечной точек по обеим осям
+        x: touchStart.x - touchPosition.x,
+        y: touchStart.y - touchPosition.y,
+    };
+
+    var msg = ""; //Сообщение
+
+    if (Math.abs(d.x) > Math.abs(d.y)) {
+        //Проверяем, движение по какой оси было длиннее
+        if (Math.abs(d.x) > sensitivity) {
+            //Проверяем, было ли движение достаточно длинным
+            if (d.x > 0) {
+                //Если значение больше нуля, значит пользователь двигал пальцем справа налево
+                msg = "Swipe Left";
+            } else {
+                //Иначе он двигал им слева направо
+                msg = "Swipe Right";
+            }
+        }
+    } else {
+        //Аналогичные проверки для вертикальной оси
+        if (Math.abs(d.y) > sensitivity) {
+            if (d.y > 0) {
+                topPanel.classList.remove("_active"); //Свайп вверх
+            } else {
+                topPanel.classList.add("_active"); //Свайп вниз
+            }
+        }
+    }
 }
