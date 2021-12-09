@@ -72,7 +72,7 @@ navLinks.forEach((n) =>
         iconMenu.classList.remove("_active");
     })
 );
-
+/*=================== ACTIVE MENU SCROLL ==========================*/
 window.addEventListener("scroll", () => {
     let scrollDistance = window.scrollY;
 
@@ -88,7 +88,7 @@ window.addEventListener("scroll", () => {
                     }
                 });
 
-                navLinks[i].querySelector("a").classList.add("active");
+                navLinks[i].classList.add("_active");
             }
         });
     }
