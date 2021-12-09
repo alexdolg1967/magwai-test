@@ -8,10 +8,10 @@ if (banners.length > 0) {
 
 const swiper = new Swiper(".swiper-container", {
     // Optional parameters
-    // autoplay: {
-    //     delay: 7000,
-    // },
-    //loop: true,
+    autoplay: {
+        delay: 7000,
+    },
+    loop: true,
     // Отступ между слайдами
     spaceBetween: 30,
     observer: true,
