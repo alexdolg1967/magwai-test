@@ -73,26 +73,29 @@ navLinks.forEach((n) =>
     })
 );
 /*=================== ACTIVE MENU SCROLL ==========================*/
-window.addEventListener("scroll", () => {
-    let scrollDistance = window.scrollY;
+debounce(
+    window.addEventListener("scroll", () => {
+        let scrollDistance = window.scrollY;
 
-    if (window.innerWidth > 320) {
-        document.querySelectorAll("section").forEach((el, i) => {
-            if (
-                el.offsetTop - document.querySelector(".header").clientHeight <=
-                scrollDistance
-            ) {
-                navLinks.forEach((el) => {
-                    if (el.classList.contains("_active")) {
-                        el.classList.remove("_active");
-                    }
-                });
-                console.log("active");
-                navLinks[i].classList.add("_active");
-            }
-        });
-    }
-});
+        if (window.innerWidth > 320) {
+            document.querySelectorAll("section").forEach((el, i) => {
+                if (
+                    el.offsetTop -
+                        document.querySelector(".header").clientHeight <=
+                    scrollDistance
+                ) {
+                    navLinks.forEach((el) => {
+                        if (el.classList.contains("_active")) {
+                            el.classList.remove("_active");
+                        }
+                    });
+                    navLinks[i].classList.add("_active");
+                }
+            });
+        }
+    }),
+    1000
+);
 
 // показываем или убираем плашку вверху при скроле
 const scrollableElement = document.body; //document.getElementById('scrollableElement');
@@ -196,3 +199,15 @@ function CheckAction() {
         }
     }
 }
+
+// функция для задержки выполнения другой функции
+const debounce = (fn, ms) => {
+    let timeout;
+    return function () {
+        const fnCall = () => {
+            fn.apply(this, arguments);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(fnCall, ms);
+    };
+};
