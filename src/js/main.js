@@ -48,9 +48,9 @@ let unlock = true;
 
 //=================
 //Menu
-let iconMenu = document.querySelector(".header__menu-icon");
-let menuBody = document.querySelector(".nav");
-let body = document.querySelector("body");
+const iconMenu = document.querySelector(".header__menu-icon");
+const menuBody = document.querySelector(".nav");
+const body = document.querySelector("body");
 
 if (iconMenu != null) {
     iconMenu.addEventListener("click", function (e) {
@@ -63,9 +63,9 @@ if (iconMenu != null) {
 }
 
 /*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll(".nav__link");
+const navLinks = document.querySelectorAll(".nav__link");
 
-navLink.forEach((n) =>
+navLinks.forEach((n) =>
     n.addEventListener("click", () => {
         body.classList.remove("_lock");
         menuBody.classList.remove("_active");
@@ -73,9 +73,31 @@ navLink.forEach((n) =>
     })
 );
 
+window.addEventListener("scroll", () => {
+    let scrollDistance = window.scrollY;
+
+    if (window.innerWidth > 768) {
+        document.querySelectorAll("section").forEach((el, i) => {
+            if (
+                el.offsetTop - document.querySelector(".header").clientHeight <=
+                scrollDistance
+            ) {
+                navLinks.forEach((el) => {
+                    if (el.classList.contains("_active")) {
+                        el.classList.remove("_active");
+                    }
+                });
+
+                navLinks[i].querySelector("a").classList.add("active");
+            }
+        });
+    }
+});
+
 // показываем или убираем плашку вверху при скроле
 const scrollableElement = document.body; //document.getElementById('scrollableElement');
 const topPanel = document.querySelector(".header");
+const pageMain = document.querySelector(".main");
 
 scrollableElement.addEventListener("wheel", checkScrollDirection);
 
