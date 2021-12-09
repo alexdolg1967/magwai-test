@@ -76,7 +76,7 @@ navLinks.forEach((n) =>
 window.addEventListener("scroll", () => {
     let scrollDistance = window.scrollY;
 
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 320) {
         document.querySelectorAll("section").forEach((el, i) => {
             if (
                 el.offsetTop - document.querySelector(".header").clientHeight <=
@@ -87,7 +87,7 @@ window.addEventListener("scroll", () => {
                         el.classList.remove("_active");
                     }
                 });
-
+                console.log("active");
                 navLinks[i].classList.add("_active");
             }
         });

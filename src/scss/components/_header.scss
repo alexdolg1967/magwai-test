@@ -1,11 +1,13 @@
 .header {
-	position: relative;
+	position: fixed;
 	top: -100%;
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	height: var(--height-header);
-	transition: 0.4s;
+	transition: 0.5s ease-in-out;
+	z-index: 99;
 
 	&__container {
 		display: flex;
@@ -201,7 +203,10 @@
 		}
 
 		&._active {
+			color: var(--color-accent);
+
 			@media screen and (min-width: 1100px) {
+				color: var(--color-white);
 				opacity: 1;
 				text-shadow: -0.5px 0 1px var(--color-white), 0 -0.5px 1px var(--color-white),
 					0.5px 0 1px var(--color-white), 0 0.5px 1px var(--color-white);
@@ -243,14 +248,8 @@
 	}
 
 	&._active {
-		position: fixed;
 		top: 0;
-		right: 0;
-		width: 100%;
 		background-color: var(--color-bg);
-		opacity: 1;
-		transition: 0.5s;
-		z-index: 99;
 	}
 
 	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
