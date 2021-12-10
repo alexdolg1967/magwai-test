@@ -29,7 +29,8 @@
 			background-color: #c2ab81;
 		}
 	}
-	&-phone {
+	&-phone,
+	&-close {
 		opacity: 0.4;
 
 		&::before {

@@ -1,3 +1,15 @@
+// функция для задержки выполнения другой функции
+const debounce = (fn, ms) => {
+    let timeout;
+    return function () {
+        const fnCall = () => {
+            fn.apply(this, arguments);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(fnCall, ms);
+    };
+};
+
 const anons = []; //массив кратких заголовков для навигации в слайдере
 const banners = document.querySelectorAll(".anons");
 if (banners.length > 0) {
@@ -199,15 +211,3 @@ function CheckAction() {
         }
     }
 }
-
-// функция для задержки выполнения другой функции
-const debounce = (fn, ms) => {
-    let timeout;
-    return function () {
-        const fnCall = () => {
-            fn.apply(this, arguments);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(fnCall, ms);
-    };
-};

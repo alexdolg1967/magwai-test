@@ -1,6 +1,6 @@
 <div class="modal">
 	<div class="modal-overlay">
-		<div class="modal__wrapper" data-target="form-popup">
+		<div class="modal__wrapper modal--1" data-target="form-popup">
 			<div class="modal-content">
 				<div class="modal-img">
 					<picture>
@@ -16,7 +16,7 @@
 								Оставьте заявку и&nbsp;наш менеджер свяжется с&nbsp;вами в&nbsp;течение 10-15 минут
 							</div>
 						</div>
-						<button href="tel:+" class="btn-close">
+						<button href="tel:+" class="btn btn-close">
 							<svg>
 								<use xlink:href="img/sprite.svg#close"></use>
 							</svg>
@@ -24,28 +24,37 @@
 					</div>
 					<div class="modal__form-body">
 						<div class="modal__form-div">
-							<input autocomplete="off" type="text" name="Имя" class="modal__form-input"
-								placeholder=" " />
-							<label for="" class="modal__form-label">Ваше Имя<i>*</i></label>
+							<div class="modal__form-div__wrapper">
+								<input autocomplete="off" type="text" name="Имя" class="modal__form-input"
+									placeholder=" " />
+								<label for="" class="modal__form-label">Ваше Имя<i>*</i></label>
+							</div>
 						</div>
 						<div class="modal__form-div">
-							<input autocomplete="off" type="email" name="Имя" class="modal__form-input"
-								placeholder=" " />
-							<label for="" class="modal__form-label">Ваш E-mail<i>*</i></label>
+							<div class="modal__form-div__wrapper">
+								<input autocomplete="off" type="email" name="Имя" class="modal__form-input"
+									placeholder=" " />
+								<label for="" class="modal__form-label">Ваш E-mail<i>*</i></label>
+							</div>
 						</div>
 						<div class="modal__form-div">
-							<input autocomplete="off" type="tel" name="Телефон" class="modal__form-input"
-								placeholder=" " />
-							<label for="" class="modal__form-label">Ваш Телефон<i>*</i> +7 (XXX) XXX XX XX</label>
+							<div class="modal__form-div__wrapper">
+								<input autocomplete="off" type="tel" name="Телефон" class="modal__form-input"
+									placeholder=" " />
+								<label for="" class="modal__form-label">Ваш Телефон<i>*</i> +7 (XXX) XXX XX XX</label>
+							</div>
 						</div>
 						<div class="modal__form-div dtext">
-							<textarea name="Сообщение" rows="3" class="modal__form-textarea" placeholder=" "></textarea>
-							<label for="" class="modal__form-label">Сообщение<i>*</i></label>
+							<div class="modal__form-div__wrapper">
+								<textarea name="Сообщение" rows="3" class="modal__form-textarea"
+									placeholder=" "></textarea>
+								<label for="" class="modal__form-label">Сообщение<i>*</i></label>
+							</div>
 						</div>
 					</div>
 					<div class="modal__form-footer">
 						<button type="submit" class="modal__form-btn btn btn-primary">
-							<span>Отправить</span>
+							<span>Оставить заявку</span>
 						</button>
 						<p>
 							Нажимая на&nbsp;кнопку &laquo;Оставить заявку&raquo; вы&nbsp;соглашаетесь с

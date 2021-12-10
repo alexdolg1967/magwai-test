@@ -11,6 +11,8 @@
 	--grid-gap: 10px;
 	--big-grid-gap: 15px;
 	--main-offset: 10px;
+	--input-height: 50px;
+
 	@media screen and (orientation: portrait) and (min-width: 767px) {
 		--height-header: 116px;
 	}
@@ -28,5 +30,6 @@
 		--grid-gap: 20px;
 		--main-offset: 40px;
 		--big-grid-gap: 70px;
+		--input-height: 70px;
 	}
 }
