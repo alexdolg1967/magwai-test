@@ -4,10 +4,6 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: var(--color-white);
 
 	&-overlay {
 		position: fixed;
@@ -18,18 +14,12 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 100vh;
 		background-color: rgba(0, 0, 0, 0.7);
-		opacity: 1;
-		visibility: visible;
+		opacity: 0;
+		visibility: hidden;
 		transition: all 0.3s ease-in-out;
 		z-index: 77777;
-		@media screen and (orientation: landscape) and (max-width: 667px) {
-			position: absolute;
-			height: 150vh;
-			display: block;
-			overflow-y: auto;
-		}
+
 		&--visible {
 			opacity: 1;
 			visibility: visible;
@@ -41,8 +31,8 @@
 		position: relative;
 		display: flex;
 		width: 90vw;
-		max-width: 1720px;
-		height: 85vh;
+		max-width: 750px;
+		height: 90vh;
 		max-height: 880px;
 
 		&:before {
@@ -54,15 +44,33 @@
 			left: 0;
 			background-color: var(--color-bg);
 			z-index: -1;
-			transform: skewX(-5deg);
+			transform: skewX(-2deg);
 			overflow: hidden;
+
+			@media (min-width: 768px) {
+				transform: skewX(-5deg);
+			}
+		}
+
+		@media (min-width: 768px) {
+			width: 85vw;
+		}
+
+		@media screen and (orientation: landscape) and (max-height: 768px) {
+			height: 400px;
+		}
+
+		@media (min-width: 1200px) {
+			max-width: 1720px;
 		}
 	}
 
 	&-content {
-		display: flex;
+		width: 100%;
 		height: 100%;
+		display: flex;
 	}
+
 	&-img {
 		position: relative;
 		display: none;
@@ -85,9 +93,24 @@
 			flex: 0 0 500px;
 		}
 
+		@media (min-width: 1300px) {
+			flex: 0 0 570px;
+		}
+
+		@media (min-width: 1400px) {
+			flex: 0 0 570px;
+		}
+
 		@media (min-width: 1450px) {
-			display: flex;
-			flex: 0 0 850px;
+			flex: 0 0 655px;
+		}
+
+		@media (min-width: 1500px) {
+			flex: 0 0 685px;
+		}
+
+		@media (min-width: 1600px) {
+			flex: 0 0 810px;
 		}
 
 		& picture source {
