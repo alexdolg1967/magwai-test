@@ -2,16 +2,16 @@
 .modal__form {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: flex-start;
 	padding: var(--grid-gap);
+	gap: 15px;
 
 	@media (min-width: 567px) {
 		padding: calc(var(--grid-gap) * 1.5);
 	}
 
 	@media (min-width: 992px) {
-		flex: 1 1 65%;
-		padding: calc(var(--grid-gap) * 3);
+		padding: calc(var(--grid-gap) * 2);
 	}
 
 	&-header {
@@ -25,18 +25,15 @@
 	}
 	&-body {
 		display: flex;
-		flex: 1 1 100%;
 		flex-direction: column;
 		justify-content: flex-start;
-
-		@media (min-width: 992px) {
-			justify-content: center;
-		}
+		gap: 15px;
 	}
+
 	&-footer {
 		display: flex;
 		align-items: center;
-		margin-top: auto;
+		// margin-top: auto;
 		column-gap: calc(var(--grid-gap) * 3);
 
 		@media (min-width: 567px) {
@@ -113,13 +110,6 @@
 .modal__form-div {
 	position: relative;
 	height: var(--input-height);
-	margin-bottom: 15px;
-	display: flex;
-	align-items: center;
-
-	@media screen and (min-width: 1024px) {
-		margin-bottom: 20px;
-	}
 
 	&__wrapper {
 		position: relative;
@@ -139,12 +129,10 @@
 	background: none;
 	border: 1px solid #2b2b2b;
 	outline: none;
-	// overflow: hidden;
 	transition: 0.3s;
 	z-index: 1;
 
 	@media screen and (min-width: 1024px) {
-		margin-bottom: 20px;
 		font-size: 16px;
 	}
 
@@ -193,7 +181,7 @@
 }
 
 .dtext {
-	min-height: calc(var(--grid-gap) + 2rem);
+	min-height: calc(var(--input-height) + 2rem);
 }
 
 .dtext .modal-form-label {
@@ -212,14 +200,7 @@
 }
 
 .modal__form-input:placeholder-shown:focus ~ .modal__form-label,
-.modal__form-input:not(:placeholder-shown) ~ .modal__form-label {
-	top: 9px;
-	left: 0.8rem;
-	font-size: 12px;
-	opacity: 0.5;
-	z-index: 10;
-}
-
+.modal__form-input:not(:placeholder-shown) ~ .modal__form-label,
 .dtext .modal__form-textarea:placeholder-shown:focus ~ .modal__form-label,
 .dtext .modal__form-textarea:not(:placeholder-shown) ~ .modal__form-label {
 	top: 9px;
